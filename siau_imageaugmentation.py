@@ -1,8 +1,10 @@
 import os,sys
-from PIL import Image, ImageMath, ImageShow
+from PIL import Image, ImageFilter, ImageMath
 import random
+import numpy as ny
 
-im = Image.open("C://Users//Admin//Desktop//Python//imeg//annoying.jpeg")
+im1 = Image.open("C://Users//Admin//Desktop//Python//imeg//tjclogo.jpg")
+im2 = Image.open("C://Users//Admin//Desktop//Python//imeg//annoying.jpeg")
 
 # Generating 8 new images of the same image from 8 intervals of rotatin
 
@@ -67,3 +69,28 @@ def cropNoAR(image, box_width, box_height, no_of_times):
 
 def translate(image, x, y):
     image.transform(image.size, Image.AFFINE, (1,0,x,0,1,y)).show()
+
+# Blur Image
+
+def normalBlur(image):
+    return image.filter(ImageFilter.BLUR())
+
+# Box Blur:
+
+def boxBlur(image, radius):
+    return image.filter(ImageFilter.BoxBlur(radius))
+
+
+# Gaussian Blur
+
+def gaussBlur(image, radius):
+    return image.filter(ImageFilter.GaussianBlur(radius))
+
+
+# Gaussian gaussNoise
+
+def gaussNoise(image, power):
+    gaussImage = Image.effect_noise(image.size, power).convert('RGB')
+    return Image.blend(image, gaussImage, alpha=0.5)
+
+
