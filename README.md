@@ -1,5 +1,5 @@
 # Image-augmentor
-A simple crossplatform image augmentation program that performs basic geometric transformations on either a single image or a directory of images.
+A simple crossplatform image augmentation program that performs basic geometric and photometric transformations on either a single image or a directory of images.
 
 # Getting started
 ## Prerequisites
