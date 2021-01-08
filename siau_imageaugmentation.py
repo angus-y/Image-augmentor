@@ -3,8 +3,8 @@ from PIL import Image, ImageFilter, ImageMath
 import random
 import numpy as ny
 
-im1 = Image.open("C://Users//Admin//Desktop//Python//imeg//tjclogo.jpg")
-im2 = Image.open("C://Users//Admin//Desktop//Python//imeg//annoying.jpeg")
+# im1 = Image.open("C://Users//Admin//Desktop//Python//imeg//tjclogo.jpg")
+# im2 = Image.open("C://Users//Admin//Desktop//Python//imeg//annoying.jpeg")
 
 # Generating 8 new images of the same image from 8 intervals of rotatin
 
@@ -93,4 +93,4 @@ def gaussNoise(image, power):
     gaussImage = Image.effect_noise(image.size, power).convert('RGB')
     return Image.blend(image, gaussImage, alpha=0.5)
 
-
+zoomIn(Image.open('oof.png'),2,1)
