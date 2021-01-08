@@ -159,7 +159,7 @@ def logic_handler(image, args, filename):
     if args.zoom:
         save_file(zoom(image, args.zoom), file_attr, '_zoom', current_dir, args.output)
     # if args.ranzoom:
-    #     print ("fuck you")
+    #     print ("test")
 
 
 def init_output_dir(output):
