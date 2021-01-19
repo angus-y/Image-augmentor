@@ -18,7 +18,7 @@ if os.path.exists('mnist_model'):
     for i in prediction:
         print (i)
 else:
-    train_dir = "archive\\trainingSet\\trainingSet"
+    train_dir = "train_dataset"
     train_dataset = keras.preprocessing.image.ImageDataGenerator(rescale=1./255, validation_split=0.1)
     train_dataset_generator = train_dataset.flow_from_directory(train_dir, target_size=(512, 512), batch_size=1, subset='training')
     validate_dataset_generator = train_dataset.flow_from_directory(train_dir, target_size=(512, 512), batch_size=1, subset='validation')
