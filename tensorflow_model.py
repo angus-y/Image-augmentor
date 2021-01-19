@@ -20,12 +20,16 @@ if os.path.exists('mnist_model'):
 else:
     train_dir = "archive\\trainingSet\\trainingSet"
     train_dataset = keras.preprocessing.image.ImageDataGenerator(rescale=1./255, validation_split=0.1)
-    train_dataset_generator = train_dataset.flow_from_directory(train_dir, target_size=(28, 28), batch_size=64, subset='training')
-    validate_dataset_generator = train_dataset.flow_from_directory(train_dir, target_size=(28, 28), batch_size=64, subset='validation')
+    train_dataset_generator = train_dataset.flow_from_directory(train_dir, target_size=(512, 512), batch_size=1, subset='training')
+    validate_dataset_generator = train_dataset.flow_from_directory(train_dir, target_size=(512, 512), batch_size=1, subset='validation')
     print ("[+]Initialized training generator and validation generator")
 
-    input_shape = (28,28,3) # shape  of input without batch size
-    num_classes = 10
+    input_shape = (512,512,3) # shape  of input without batch size
+
+    # input_shape = (28,28,3) # shape  of input without batch size
+    # num_classes = 10
+    num_classes = 2
+
     model = keras.Sequential(
         [
             keras.Input(shape=input_shape),
